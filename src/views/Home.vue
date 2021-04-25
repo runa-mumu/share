@@ -11,6 +11,10 @@
           <img class="icon" src="../assets/profile.png" />
           <p>プロフィール</p>
         </div>
+        <div class="flex icon-field">
+          <img class="icon" src="../assets/logout.png" />
+          <p>ログアウト</p>
+        </div>
         <div class="share">
           <p>シェア</p>
           <textarea></textarea>
