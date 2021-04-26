@@ -2,6 +2,10 @@
   <div class="share">
     <p>シェア</p>
     <textarea></textarea>
+    <div>
+      <button>シェアする</button>
+    </div>
+  </div>
     
 
 </template>
