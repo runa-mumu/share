@@ -25,21 +25,40 @@
 <script>
 import SideNavi from "../components/SideNavi";
 import Message from "../components/Message";
-
+import axios from "axios";
 export default {
   data() {
-    return{
+    return {
       active: true,
-      name:"太朗",
-      profile: "私は太朗です"
+      name: this.$store.state.user.name,
+      profile: this.$store.state.user.profile,
     };
   },
-  components:{
+  methods: {
+    edit() {
+      if (!this.active) {
+        axios
+          .put("https://infinite-sierra-17939.herokuapp.com/api/user", {
+            email: this.$store.state.user.email,
+            profile: this.profile,
+          })
+          .then((response) => {
+            this.$store.commit("changeUserData", this.profile);
+            console.log(response);
+          });
+      }
+      this.active = !this.active;
+    },
+  },
+  components: {
     SideNavi,
-    Message
-  }
+    Message,
+  },
 };
 </script>
+
+
+
 <style scoped>
 .left {
   width: 22%;
